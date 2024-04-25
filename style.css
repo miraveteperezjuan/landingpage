@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+/*Con los import lo que hacemos es importar dos fuentes de Google para el uso en nuestra web*/
+
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: aqua;
+    background: url(img/Background.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: auto;
+    background-attachment: fixed;
+}
+
+/* Encabezado */
+header {
+    padding: 20px 100px;
+}
+
+/*Con el display flex lo que hacemos es habilitar los elementos del contenedor. Los elementos se ajustan automáticamente al espacio disponible en pantalla.  UA 2.18 LM_Introducción CSS Flexbox.pdf*/
+
+header nav {
+    display: flex;
+    justify-content: space-between; /*Space between distribuye los itemes dejando el mismo espacio entre ellos. 
+    UA 2.18 LM_Introducción CSS Flexbox.pdf*/
+    align-items: center; /* align-items: Usada para alinear los ítems del eje secundario (por defecto, el vertical). 
+    UA 2.18 LM_Introducción CSS Flexbox.pdf*/
+}
+
+/*Utilizamos sobre todo em porque para los diseños responsive se adapta mejor que el px*/
+
+header .logo {
+    color: white;
+    font-size: 1.7em;
+    text-transform: uppercase; /*Con este comando lo que hacemos es convertir cualquier tipo de letra que haya en mayusculas*/
+    text-decoration: none; /*Esto sirve para eliminar la decoración predeterminada. Sirve por ejemplo para eliminar la raya que aparece en los enlaces*/
+    border-radius: 5px;
+    padding: 0 10px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Finger Paint';
+}
+
+header .logo:hover {
+    color: white;
+    background: rgba(4,121,225,255);
+    border-radius: 15px;
+}
+
+header .navbar {
+    display: flex;
+}
+
+header .navbar li {
+    list-style: none;
+    margin-left: 35px;
+}
+
+header .navbar li a {
+    text-decoration: none;
+    color: white; 
+    font-weight: 600;
+    padding: 10px;
+    transition: border-bottom 0.3s, padding 0.3s;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+header .navbar li a:hover {
+    border-bottom: 5px solid rgba(4,121,225,255);
+    padding: 2px;
+}
+
+/* Contenido principal */
+main {
+    padding: 50px; /*Agregamos espacio de relleno al rededor de los diferentes contenidos que hay en las distintas webs*/
+}
+
+.contenido {
+    display: flex;
+    justify-content: center; /*justify-content: Se utiliza para alinear los ítems del eje principal. En este caso de forma horizontal y centrada
+    UA 2.18 LM_Introducción CSS Flexbox.pdf*/
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 100px;
+    flex-wrap: nowrap; /*Con este comando, no se permite el desbordamiento de los elementos. Estos se hacen más pequeños según el tamaño del contenedor padre
+    UA 2.18 LM_Introducción CSS Flexbox.pdf*/
+}
+
+.contenido .info {
+    max-width: 600px;
+    text-align: center;
+    padding-right: 80px;
+    flex-wrap: nowrap;
+}
+
+.contenido .info h2  {
+    font-size: 2.2em;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Finger Paint'; /*Rescatamos una de las fuentes del import*/
+}
+
+.contenido .info h1  {
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-family: 'Finger Paint';
+}
+
+.contenido .info p {
+    font-size: 1.2em;
+    line-height: 1.5; /*Esta etiqueta sirve para cambiar la altura de la línea. En este caso al espaciado vertical y a la separación de las distintas líneas en el texto*/
+    color: white;
+}
+
+.subtitulos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.subtitulos h3 {
+    font-size: 1.5em;
+    margin-left: 15px;
+    color: white;
+    background-color: rgba(4,121,225,255);
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.subtitulos h3:hover {
+    transform: scale(1.10); /* Con el escalado lo que hacemos es que cada vez que el cursor pase por encima de los subtitulos, este se incrementa un poco de tamaño */
+}
+
+.subtitulos h5 {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 15px;
+    color: white;
+}
+
+.subtitulos a{
+    text-decoration: none;
+}
+
+.frase {
+    font-size: 1.5em;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.contenido .info a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(4,121,225,255);
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    transition: background-color 0.3s, color 0.3s; /*Esta etiqueta sirve para hacer una transición suabe del enlace. Con ello se pretende
+    que en medio segundo se cambie de sus colores actuales a los del hover */
+}
+
+.contenido .info a:hover {
+    color: white;
+    background: darkblue;
+}
+
+.contenido .imgBox {
+    width: 45%;
+    margin-left: 175px;
+}
+
+.contenido .imgBox img {
+    width: 80%;
+    border-radius: 30px;
+}
+
+.contenido1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido1 .info1 p{
+    font-size: 1.1em;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contenido1 h1  {
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-family: 'Finger Paint';
+}
+
+.subtitulos1 h3 {
+    font-size: 30px;
+    text-align: left;
+    margin-top: 40px;
+    color: white;
+    font-family: 'Finger Paint';
+}
+
+.subtitulos1 h5 {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 15px;
+    color: white;
+}
+
+.subtitulos1 p {
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+}
+
+.frase1 {
+    font-size: 1.5em;
+    line-height: 1.5;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.contenido2 .info2 p{
+    font-size: 1.1em;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contenido2 .info2 h2  {
+    font-size: 2.2em;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Finger Paint';
+    text-align: center;
+}
+
+.contenido2 .info2 a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+
+.subtitulos2 {
+    display: flex;
+    justify-content: left;  /*justify-content: Se utiliza para alinear los ítems del eje principal. En este caso de forma horizontal y a la izquierda*/
+    text-align: left;
+    margin-top: 20px;
+    margin-left: -20px;
+}
+
+.subtitulos2 h3 {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: white;
+    background-color: rgba(4,121,225,255);
+    padding: 10px 20px;
+    border-radius: 20px; 
+}
+
+.subtitulos3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.subtitulos3 h3 {
+    font-size: 1.5em;
+    margin: 0 10px;
+    color: white;
+    background-color: rgba(4,121,225,255);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.subtitulos4 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.imgPro {
+    display: flex; /* Usa flexbox para alinear las imágenes horizontalmente */
+    justify-content: center;
+    padding: auto;
+    margin-bottom: 50px;
+  }
+  
+  .imgPro img {
+    width: 400px;
+    height: 240px; 
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .imgPro figcaption{
+    font-size: 1.1em;
+    text-align: center;
+    color: white;
+ }
+
+/* Pie de página */
+footer {
+    padding: 0px 100px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: white;
+}
+
+/* Redes sociales */
+.redesSociales {
+    list-style: none;
+    display: flex;
+}
+
+.redesSociales li {
+    margin-left: 10px;
+}
+
+.redesSociales li a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.redesSociales li a:hover {
+    color: rgba(4,121,225,255); 
+}
+
+/* Formulario */
+
+/* Estilos adicionales para el formulario de contacto */
+
+.contacto-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+    font-family: 'Finger Paint';
+    font-size: 20px;
+}
+
+.contacto-form input, option,
+.contacto-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/*Esta forma de editar los distintos botones está sacada del vídeo Login y Registro CSS y HTML Responsive subido a la web de UNIR*/
+
+.contacto-form input[type="submit"] {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgba(4, 121, 225, 1);
+    margin-top: 10px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+
+.contacto-form input[type="reset"] {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: red;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    font-size: 1em;
+}
+
+.contacto-form input[type="submit"]:hover {
+    background-color: rgba(4, 121, 225, 0.8);
+}
+
+.contacto-form input[type="reset"]:hover {
+    background-color: brown
+}
+
+.map{
+    padding-left: 100px;
+}
+
+iframe{
+    width: 600px;
+    height: 450px;
+}
+
+/*Tema resposive con las media querrys*/
+/*Lo subo en el mismo CSS. En clase se dijo que se podría hacer en otro CSS, pero he visto más conveniente para esta práctica meterlo en el mismo*/
+
+@media screen and (min-width: 576px) {
+
+    nav{
+        display: flex;
+    }
+
+    .navbar{
+        display: inline-block;
+    }
+
+    .logo{
+        display: flex;
+    }
+
+    .contenido, .contenido1, .contenido2{
+        display: flex;
+    }
+
+    .info, .info1, .info2{
+        display: block;
+    }
+
+    .imgBox, .imgPro{
+        width: 50%;
+        height: 25%;
+    }
+
+    section{
+        width: 100%;
+    }
+
+    .frase{
+        text-align: center;
+    }
+
+}
+
+/* Media queries para pantallas de 992px */
+
+@media screen and (min-width: 992px) {
+
+    nav{
+        display: flex;
+    }
+
+    .navbar{
+        display: inline-block;
+    }
+
+    .logo{
+        display: block;
+    }
+
+    .contenido, .contenido1{
+        display: flex;
+    }
+
+    .contenido2{
+        display: block;
+    }
+
+    .info, .info1, .info2{
+        display: block;
+    }
+
+    .imgBox, .imgPro{
+        width: auto;
+        height: auto;
+    }
+}
